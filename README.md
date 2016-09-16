@@ -1,7 +1,7 @@
 ![Redux Custom Select Header](/readme-header.jpg?raw=true)
 
 # React Custom Select
-React custom select gives you a simple boiler plate for fully customizable select/option groups without having to battle with native styles. Because it's a react component you can easily integrate it with an existing react or flux style project.
+React custom select gives you a simple boiler plate for fully customizable select/option groups without having to battle with native styles. Because it's a react component you can easily integrate it with an existing react or flux style project and pass in the options via the props.
 
 
 ## Usage & Installation:
@@ -23,10 +23,24 @@ React custom select gives you a simple boiler plate for fully customizable selec
 */
 
 <CustomSelect
-  options={_options}
+  options={selectOptions}
   onSelect={(value) => this.updateForm(value)}
   />
 ```
+
+### 3) Define your options:
+```
+/* Array of your selectOptions */
+const selectOptions = [
+  {text: 'one', value: 1},
+  {text: 'two', value: 2},
+  {text: 'three', value:3},
+  {text: 'three', value:4}
+];
+```
+### 4) Define your callback: (optional)<br/>
+* This allows you to send a callback to when the value is changed.
+
 
 ## Contributing
 It doesn't matter if you're a veteran or not. Everyone brings something awesome to the party so please contribute.
