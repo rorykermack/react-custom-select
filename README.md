@@ -1,20 +1,31 @@
-![Redux Custom Select Header](/readme-header.jpg?raw=true)
+![Redux Custom Select Header](https://raw.githubusercontent.com/rorykermack/react-custom-select/master/readme-header.jpg)
 
 # React Custom Select
 React custom select gives you a simple boiler plate for fully customizable select/option groups without having to battle with native styles. Because it's a react component you can easily integrate it with an existing react or flux style project and pass in the options via the props.
 
 
+
+## Installation:
+```
+npm install react-custom-select
+```
+
 ## Usage & Installation:
-* Clone / Download this repo. <br/>
-* Install customSelect.react.js as a component into your project. <br/>
-* Include CustomSelect and use.
+* Install react-custom-select
+* Include CustomSelect, set your options & callback and use.
 * Done!
 
-## How to setup: <br/>
-### 1) Install customSelect.react as a component<br/>
-### 2) Include CustomSelect<br/>
-### 2) Define your customSelect
+## Example:
+
 ```
+/* Array of your selectOptions */
+const selectOptions = [
+  {text: 'one', value: 1},
+  {text: 'two', value: 2},
+  {text: 'three', value:3},
+  {text: 'three', value:4}
+];
+
 /*
   static propTypes = {
     options: React.PropTypes.array.required,
@@ -24,23 +35,17 @@ React custom select gives you a simple boiler plate for fully customizable selec
 
 <CustomSelect
   options={selectOptions}
-  onSelect={(value) => this.updateForm(value)}
   />
 ```
 
-### 3) Define your options:
-```
-/* Array of your selectOptions */
-const selectOptions = [
-  {text: 'one', value: 1},
-  {text: 'two', value: 2},
-  {text: 'three', value:3},
-  {text: 'three', value:4}
-];
-```
-### 4) Define your callback: (optional)<br/>
+### Defining your callback: (optional)<br/>
 * This allows you to send a callback to when the value is changed.
-
+```
+<CustomSelect
+  options={selectOptions}
+  onSelect={(value) => this.updateForm(value)}
+  />
+```
 
 ## Contributing
 It doesn't matter if you're a veteran or not. Everyone brings something awesome to the party so please contribute.
