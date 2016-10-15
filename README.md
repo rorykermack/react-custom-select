@@ -3,8 +3,6 @@
 # React Custom Select
 React custom select gives you a simple boiler plate for fully customizable select/option groups without having to battle with native styles. Because it's a react component you can easily integrate it with an existing react or flux style project and pass in the options via the props.
 
-
-
 ## Installation:
 ```
 npm install react-custom-select
