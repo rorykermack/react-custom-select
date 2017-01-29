@@ -7,7 +7,6 @@
 */
 
 import React, { PropTypes } from 'react';
-// import Component from 'react-pure-render/component';
 
 export default class CustomSelect extends React.Component {
 
