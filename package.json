@@ -2,7 +2,10 @@
   "name": "react-custom-select",
   "version": "0.0.2",
   "description": "A simple, reusable, custom form selector component for use in React Projects",
-  "keywords": ["react", "select"],
+  "keywords": [
+    "react",
+    "select"
+  ],
   "main": "index.js",
   "url": "https://github.com/rorykermack/react-custom-select",
   "scripts": {
@@ -21,7 +24,7 @@
   "license": "MIT",
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "",
       "pre-push": "npm run clean"
     }
   },
@@ -79,6 +82,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "eslint-plugin-import": "^2.0.1",
-    "react-addons-shallow-compare": "^15.3.2"
+    "react-addons-shallow-compare": "^15.3.2",
+    "react-dom": "^15.4.2"
   }
 }

@@ -24,8 +24,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Version: 1.0
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
-// import Component from 'react-pure-render/component';
-
 var CustomSelect = function (_React$Component) {
   _inherits(CustomSelect, _React$Component);
 
@@ -56,9 +54,9 @@ var CustomSelect = function (_React$Component) {
     key: 'updateSelection',
     value: function updateSelection(selection) {
       this.toggleSelectorShown();
-      var _props = this.props;
-      var onSelect = _props.onSelect;
-      var options = _props.options;
+      var _props = this.props,
+          onSelect = _props.onSelect,
+          options = _props.options;
 
       this.setState({
         activeItem: selection
@@ -71,9 +69,9 @@ var CustomSelect = function (_React$Component) {
       var _this2 = this;
 
       var options = this.props.options;
-      var _state = this.state;
-      var selectorShown = _state.selectorShown;
-      var activeItem = _state.activeItem;
+      var _state = this.state,
+          selectorShown = _state.selectorShown,
+          activeItem = _state.activeItem;
 
 
       var defultContainerStyles = {

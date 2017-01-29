@@ -7,21 +7,33 @@
 */
 
 import React, { PropTypes } from 'react';
+import * as DefaultSelectStyles from './defaultStyles';
 
 export default class CustomSelect extends React.Component {
 
   static propTypes = {
-    options: PropTypes.array
+    options: PropTypes.array,
+    onSelect: PropTypes.func
   };
 
   constructor(props) {
     super(props);
-    const defaultStylesOn = (typeof props.defaultStyles !== 'undefined') ? props.defaultStyles : false;
     this.state = {
       activeItem: 0,
-      selectorShown: false,
-      defaultStyles: defaultStylesOn
+      selectorShown: false
     };
+  }
+
+  componentWillMount() {
+    const { options } = this.props;
+    options.map((option, i) => {
+      if (option.default) {
+        this.setState({
+          activeItem: i
+        });
+      }
+      return true;
+    });
   }
 
   toggleSelectorShown() {
@@ -35,69 +47,37 @@ export default class CustomSelect extends React.Component {
     this.toggleSelectorShown();
     const { onSelect, options } = this.props;
     this.setState({
-      activeItem: selection
+      activeItem: selection,
+    }, () => {
+      if (typeof onSelect !== 'undefined') onSelect(options[selection].value);
     });
-    if (typeof onSelect !== 'undefined') onSelect(options[selection].value);
   }
 
 
   render() {
     const { options } = this.props;
     const { selectorShown, activeItem } = this.state;
-
-    const defultContainerStyles = {
-      position: 'relative',
-      color: '#2d2d2d',
-      minWidth: '250px',
-      display: 'inline-block'
-    };
-
-    const defaultSelectionStyles = {
-      fontFamily: 'sans-serif',
-      fontWeight: 'bold',
-      cursor: 'pointer',
-      background: '#f0f0f0',
-      display: 'inline-block',
-      padding: '10px 15px',
-      width: '100%',
-      boxSizing: 'border-box',
-      userSelect: 'none'
-    };
-
-    const defaultOptionStyles = {
-      fontFamily: 'sans-serif',
-      listStyle: 'none',
-      minWidth: '250px',
-      padding: '10px 15px',
-      cursor: 'pointer',
-      width: '100%',
-      userSelect: 'none',
-      boxSizing: 'border-box',
-      borderBottom: '2px solid #c8c8c8'
-    }
-
-    const defaultUlStyles = {
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      background: '#e7e7e7',
-      margin: 0,
-      padding: 0,
-      width: '100%',
-      boxSizing: 'border-box'
-    }
-
-
-
-    return(
-      <div className="react-custom-select" style={defultContainerStyles}>
-        <div style={defaultSelectionStyles} className="selection" onClick={() => this.toggleSelectorShown()}>{options[activeItem].text}</div>
+    return (
+      <div className="react-custom-select" style={DefaultSelectStyles.ContainerStyles}>
+        <div
+          style={DefaultSelectStyles.SelectionStyles}
+          className="selection"
+          onClick={() => this.toggleSelectorShown()}
+        >
+          {options[activeItem].text}
+        </div>
         {selectorShown &&
-          <ul style={defaultUlStyles}>
+          <ul style={DefaultSelectStyles.UlStyles}>
             {options.map((option, key) => {
               return (
-                <li style={defaultOptionStyles} key={`react-custom-select-${key}`} onClick={() => this.updateSelection(key)}>{option.text}</li>
-              )
+                <li
+                  style={DefaultSelectStyles.OptionStyles}
+                  key={`react-custom-select-${key}`}
+                  onClick={() => this.updateSelection(key)}
+                >
+                  {option.text}
+                </li>
+              );
             })}
           </ul>
         }
