@@ -13,7 +13,7 @@ npm install react-custom-select
 * Include CustomSelect, set your options & callback and use.
 * Done!
 
-## Example:
+### Example Usage:
 
 ```
 /* Array of your selectOptions */
@@ -21,7 +21,7 @@ const selectOptions = [
   {text: 'one', value: 1},
   {text: 'two', value: 2},
   {text: 'three', value:3},
-  {text: 'three', value:4}
+  {text: 'three', value:4, default: true}
 ];
 
 /*
@@ -34,10 +34,20 @@ const selectOptions = [
 <CustomSelect
   options={selectOptions}
   />
-```
 
-### Defining your callback: (optional)<br/>
+<CustomSelect
+  options={selectOptions}
+  selectorShown
+  />
+```
+##### Defining your default option (optional)
+* By passing {default: true} you set that option to be the default selected
+
+##### Defining your callback: (optional)
 * This allows you to send a callback to when the value is changed.
+
+##### Defining visibility
+* By passing `selectorShown` to the component you set the default visibility (of the selector block) to visible.
 ```
 <CustomSelect
   options={selectOptions}
@@ -45,8 +55,11 @@ const selectOptions = [
   />
 ```
 
-## Contributing
-It doesn't matter if you're a veteran or not. Everyone brings something awesome to the party so please contribute.
+### Coming soon:
+* Placeholders
+
+### Contributing
+Everyone brings something awesome to the party so please contribute.
 If you have any suggestions give me a shout on twitter<br/>
 1. Fork it! <br/>
 2. Create your feature branch: `git checkout -b my-new-feature` <br/>
