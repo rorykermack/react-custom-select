@@ -24,7 +24,7 @@ export default class App extends React.Component {
       <section className="react-custom-select-test-page">
         <h1>React Custom Select Examples:</h1>
         <CustomSelect options={customSelectOptions1} /> &nbsp; &nbsp;
-        <CustomSelect options={customSelectOptions2} />
+        <CustomSelect options={customSelectOptions2} selectorShown/>
       </section>
     );
   }
