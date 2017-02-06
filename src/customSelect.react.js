@@ -13,14 +13,15 @@ export default class CustomSelect extends React.Component {
 
   static propTypes = {
     options: PropTypes.array,
-    onSelect: PropTypes.func
+    onSelect: PropTypes.func,
+    selectorShown: PropTypes.bool
   };
 
   constructor(props) {
     super(props);
     this.state = {
       activeItem: 0,
-      selectorShown: false
+      selectorShown: props.selectorShown || false
     };
   }
 
