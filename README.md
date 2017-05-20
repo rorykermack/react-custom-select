@@ -1,7 +1,7 @@
 ![Redux Custom Select Header](https://raw.githubusercontent.com/rorykermack/react-custom-select/master/readme-header.jpg)
 
 # React Custom Select
-React custom select gives you a simple boiler plate for fully customizable select/option groups without having to battle with native styles. Because it's a react component you can easily integrate it with an existing react or flux style project and pass in the options via the props.
+React custom select gives you a simple boiler plate for fully customizable select/option groups without having to battle with native styles. Because it's a react component you can easily integrate it with an existing react project and pass in the options via the props.
 
 ## Installation:
 ```
@@ -59,7 +59,7 @@ const selectOptions = [
 * Placeholders
 
 ### Contributing
-Everyone brings something awesome to the party so please contribute.
+Everyone brings something to the party so please contribute.
 If you have any suggestions give me a shout on twitter<br/>
 1. Fork it! <br/>
 2. Create your feature branch: `git checkout -b my-new-feature` <br/>
